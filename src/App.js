@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import GamePage from './Components/GamePage/GamePage';
+import Score from './Components/Score/Score'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    // baseURL: 'http://jservice.io/api/random',
+    // question: '',
+    // answer: '',
+    // id: '',
+    // searchURL: 'http://jservice.io/api/random',
+    // data: [],
+    gameInfo: {}
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+     
+         fetch('http://jservice.io/api/random')
+         .then(response => response.json()) // returns second Promise
+         .then(data => this.setState({gameInfo: data[0]}))
+         .then(() => console.log("Game Information", this.state.gameInfo))
+         .catch(error => console.error(error))
+      
+       
+    
+    
+  }
+
+  render() {
+    return (
+      <div className='gameContainer'>
+        <h1 className='header'>Welcome to Jeopardy</h1>
+        <Score />
+        <h1><span>Let's Play!</span></h1>
+        <button onClick={this.handleSubmit} className='button'>Get Question</button>
+        
+        <GamePage gameInfo={this.state.gameInfo}/>
+        
+      </div>
+    );
+  }
 }
 
 export default App;

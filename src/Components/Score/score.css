@@ -1,0 +1,33 @@
+.scoreBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.buttonOne {
+    margin: 5px;
+    background-color: darkkhaki;
+}
+.buttonTwo {
+    margin: 5px;
+    background-color: darkslategray;
+}
+.buttonThree {
+    margin: 5px;
+    background-color: firebrick;
+}
+
+.incrementers {
+    display: flex;
+    flex-direction: row;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    color:goldenrod;
+}
