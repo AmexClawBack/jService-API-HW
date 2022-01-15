@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './score.css'
 
+
 class Score extends Component {
 
     state = {
@@ -15,20 +16,21 @@ class Score extends Component {
 
     handleIncrement = () => {
         console.log('Count before click', this.state.count)
-        this.setState({ count: this.state.count + 1 })
+        this.setState({ count: this.state.count + this.props.gameInfo.value })
     }
     handleDecrement = () => {
         console.log('Count before click', this.state.count)
-        this.setState({ count: this.state.count - 1 })
+        this.setState({ count: this.state.count - this.props.gameInfo.value })
     }
     handleReset = () => {
         console.log('Count before click', this.state.count)
+        this.setState({ count: this.state.count = 0})
     }
 
     render() {
         return (
             <div className='scoreBox'>
-                <h1 className='score'><span>Score:</span> {this.state.count}</h1>
+                <h1 className='score'><span className="scoreIt">Score:</span> {this.state.count}</h1>
                 <div className='incrementers'>
                 <button onClick={this.handleIncrement} className='buttonOne'>Increase</button>
                 <button onClick={this.handleDecrement} className='buttonTwo'>Decrease</button>

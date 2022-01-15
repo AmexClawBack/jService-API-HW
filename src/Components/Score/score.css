@@ -7,15 +7,30 @@
 
 .buttonOne {
     margin: 5px;
-    background-color: darkkhaki;
+    background-color: greenyellow;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: x-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .buttonTwo {
     margin: 5px;
-    background-color: darkslategray;
+    background-color: red;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: x-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .buttonThree {
     margin: 5px;
-    background-color: firebrick;
+    background-color: grey;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: x-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .incrementers {
@@ -26,6 +41,12 @@
 .score {
     display: flex;
     justify-content: center;
+    
+    
+}
+
+.scoreIt {
+    margin-right: 10px;
 }
 
 span {

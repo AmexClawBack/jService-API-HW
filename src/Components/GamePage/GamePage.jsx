@@ -4,13 +4,13 @@ import "./GamePage.css";
 class GamePage extends Component {
   state = {
     //Figure out the state of my answer element
-    showMe: false,
+    toggle: false,
   };
 
   operation = () => {
-    console.log("Inside Operation:", this.state.showMe);
+    console.log("Toggle status:", this.state.toggle);
     this.setState({
-      showMe: !this.state.showMe,
+      toggle: !this.state.toggle,
     });
   }
 
@@ -18,22 +18,23 @@ class GamePage extends Component {
     // console.log(this.props.gameInfo)
     // console.log("inside", this.props.gameInfo.id)
     return (
-      <div key="id:{this.props.gameInfo.id}">
+      <div key={this.props.gameInfo.id} className="container">
         <h3>
-          <span>Category: {this.props.gameInfo.category?.title}</span>{" "}
+          <span>Category:</span> {this.props.gameInfo.category?.title}
         </h3>
         <h3>
-          <span>Points: {this.props.gameInfo?.value}</span>{" "}
+          <span>Points:</span> {this.props.gameInfo?.value}
         </h3>
         <h3>
-          <span>Question: {this.props.gameInfo?.question}</span>{" "}
+          <span>Question:</span> {this.props.gameInfo?.question}
         </h3>
 
-        {this.state.showMe ? <h1>Answer: {this.props.gameInfo.answer}</h1> : <h1>Answer:</h1>}
-
+        {this.state.toggle ? <h1><span>Answer: </span>{this.props.gameInfo.answer}</h1> : <h1><span>Answer: </span></h1>}
+        <div className="buttonBox">
         <button onClick={this.operation} className="revealButton">
           Click to Reveal Answer
         </button>
+        </div>
       </div>
     );
   }

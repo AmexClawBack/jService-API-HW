@@ -1,3 +1,30 @@
-.answer {
-    visibility: hidden;
+.answerButton {
+    border-radius: 10px;
+}
+
+
+.container {
+    width: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    padding: 1%;
+    height: 100%;
+}
+
+.revealButton {
+    width: 30%;
+    height: 3em;
+    border-radius: 10px;
+    background-color:goldenrod;
+    font-size: x-large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.buttonBox {
+   
+    display: flex;
+    justify-content: center;
 }

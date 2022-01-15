@@ -3,6 +3,11 @@ import GamePage from './Components/GamePage/GamePage';
 import Score from './Components/Score/Score'
 import './App.css'
 
+
+
+    
+
+
 class App extends Component {
 
   state = {
@@ -24,6 +29,7 @@ class App extends Component {
          .then(() => console.log("GameInfo ID:", this.state.gameInfo.id))
          .then(() => console.log("Category:", this.state.gameInfo.category.title))
          .then(() => console.log("Question:", this.state.gameInfo.question))
+         .then(() => console.log("Answer:", this.state.gameInfo.answer))
          .then(() => console.log("Point Value:", this.state.gameInfo.value))
          .catch(error => console.error(error))
       
@@ -35,8 +41,8 @@ class App extends Component {
   render() {
     return (
       <div className='gameContainer'>
-        <h1 className='header'>Welcome to Jeopardy</h1>
-        <Score />
+        <h1 className='header'>WELCOME TO JEOPARDY</h1>
+        <Score gameInfo={this.state.gameInfo}/>
         <h1><span>Let's Play!</span></h1>
         <button onClick={this.handleSubmit} className='button'>Get Question</button>
         
