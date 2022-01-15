@@ -21,7 +21,7 @@ class App extends Component {
          fetch('http://jservice.io/api/random')
          .then(response => response.json()) // returns second Promise
          .then(data => this.setState({gameInfo: data[0]}))
-         .then(() => console.table("GameInfo:", this.state.gameInfo))
+         .then(() => console.log("GameInfo ID:", this.state.gameInfo.id))
          .then(() => console.log("Category:", this.state.gameInfo.category.title))
          .then(() => console.log("Question:", this.state.gameInfo.question))
          .then(() => console.log("Point Value:", this.state.gameInfo.value))

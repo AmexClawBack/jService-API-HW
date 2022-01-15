@@ -7,8 +7,8 @@ class GamePage extends Component {
     showMe: false,
   };
 
-  operation() {
-    console.log("Inside Operation");
+  operation = () => {
+    console.log("Inside Operation:", this.state.showMe);
     this.setState({
       showMe: !this.state.showMe,
     });
@@ -29,17 +29,9 @@ class GamePage extends Component {
           <span>Question: {this.props.gameInfo?.question}</span>{" "}
         </h3>
 
-        {this.state.showMe ? null : (
-          <div className="answerContainer">
-            <h1>
-              <span className="answer">
-                Answer: {this.props.gameInfo?.answer}
-              </span>
-            </h1>
-          </div>
-        )}
+        {this.state.showMe ? <h1>Answer: {this.props.gameInfo.answer}</h1> : <h1>Answer:</h1>}
 
-        <button onClick={() => this.operation()} className="revealButton">
+        <button onClick={this.operation} className="revealButton">
           Click to Reveal Answer
         </button>
       </div>
